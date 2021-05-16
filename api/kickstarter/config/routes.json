@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/kickstarters",
+      "handler": "kickstarter.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/kickstarters/count",
+      "handler": "kickstarter.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/kickstarters/:id",
+      "handler": "kickstarter.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/kickstarters",
+      "handler": "kickstarter.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/kickstarters/:id",
+      "handler": "kickstarter.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/kickstarters/:id",
+      "handler": "kickstarter.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
