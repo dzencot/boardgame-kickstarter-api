@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pledges",
+  "info": {
+    "name": "Pledge",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "kickstarter": {
+      "model": "kickstarter",
+      "via": "pledges"
+    },
+    "price": {
+      "type": "integer"
+    },
+    "contracts": {
+      "via": "pledge",
+      "collection": "contract"
+    }
+  }
+}

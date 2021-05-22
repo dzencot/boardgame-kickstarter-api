@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/pledges",
+      "handler": "pledge.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/pledges/count",
+      "handler": "pledge.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/pledges/:id",
+      "handler": "pledge.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/pledges",
+      "handler": "pledge.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/pledges/:id",
+      "handler": "pledge.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/pledges/:id",
+      "handler": "pledge.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

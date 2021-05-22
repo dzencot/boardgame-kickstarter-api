@@ -105,6 +105,10 @@
     },
     "slug": {
       "type": "string"
+    },
+    "pledges": {
+      "via": "kickstarter",
+      "collection": "pledge"
     }
   }
 }

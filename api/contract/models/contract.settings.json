@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "contracts",
+  "info": {
+    "name": "Contract",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "user": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "contracts"
+    },
+    "contract_date": {
+      "type": "date"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "waiting",
+        "sended",
+        "finished",
+        "removed"
+      ]
+    },
+    "pledge": {
+      "model": "pledge",
+      "via": "contracts"
+    }
+  }
+}
