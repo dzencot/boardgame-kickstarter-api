@@ -24,11 +24,10 @@ module.exports = {
       status: 'waiting',
       contract_date: new Date(),
     };
-    const entityExist = await strapi.services.contract.find({ pledge: contract.pledge, user: id });
-    if (entityExist) {
-      return ctx.throw(409, 'Already exist');
-    }
-    const entity = await strapi.services.contract.create(contract);
+    const entityExist = await strapi.services.contract.findOne({ pledge: contract.pledge, user: id });
+    const entity = entityExist ?
+      await strapi.services.contract.update({ id: entityExist.id }, entityExist, { ...contract, updated_by: user.id }) :
+      await strapi.services.contract.create({ ...contract, created_by: user.id, updated_by: user.id });
     return sanitizeEntity(entity, { model: strapi.models.pledge });
   },
 };

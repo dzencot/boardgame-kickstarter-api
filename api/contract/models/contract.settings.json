@@ -30,8 +30,8 @@
       ]
     },
     "pledge": {
-      "model": "pledge",
-      "via": "contracts"
+      "via": "contracts",
+      "model": "pledge"
     }
   }
 }

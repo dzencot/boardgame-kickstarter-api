@@ -25,6 +25,9 @@
     "contracts": {
       "via": "pledge",
       "collection": "contract"
+    },
+    "description": {
+      "type": "richtext"
     }
   }
 }
