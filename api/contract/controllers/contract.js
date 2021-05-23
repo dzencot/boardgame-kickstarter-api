@@ -15,16 +15,16 @@ module.exports = {
    */
 
   async create(ctx) {
-    const { id } = await strapi.plugins[
+    const user = await strapi.plugins[
       'users-permissions'
     ].services.jwt.getToken(ctx);
     const contract = {
       ...ctx.request.body,
-      user: id,
+      user: user.id,
       status: 'waiting',
       contract_date: new Date(),
     };
-    const entityExist = await strapi.services.contract.findOne({ pledge: contract.pledge, user: id });
+    const entityExist = await strapi.services.contract.findOne({ pledge: contract.pledge, user: user.id });
     const entity = entityExist ?
       await strapi.services.contract.update({ id: entityExist.id }, entityExist, { ...contract, updated_by: user.id }) :
       await strapi.services.contract.create({ ...contract, created_by: user.id, updated_by: user.id });

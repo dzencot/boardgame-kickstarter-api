@@ -32,6 +32,9 @@
     "pledge": {
       "via": "contracts",
       "model": "pledge"
+    },
+    "count": {
+      "type": "integer"
     }
   }
 }
