@@ -12,14 +12,29 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "contract": {
-      "model": "contract",
+    "project": {
+      "model": "project",
       "via": "project_contracts"
     },
     "user": {
       "plugin": "users-permissions",
       "model": "user",
       "via": "project_contracts"
+    },
+    "count": {
+      "type": "integer"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "waiting",
+        "sended",
+        "finished",
+        "removed"
+      ]
+    },
+    "contract_date": {
+      "type": "date"
     }
   }
 }
