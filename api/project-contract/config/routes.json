@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/project-contracts",
+      "handler": "project-contract.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/project-contracts/count",
+      "handler": "project-contract.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/project-contracts/:id",
+      "handler": "project-contract.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/project-contracts",
+      "handler": "project-contract.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/project-contracts/:id",
+      "handler": "project-contract.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/project-contracts/:id",
+      "handler": "project-contract.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

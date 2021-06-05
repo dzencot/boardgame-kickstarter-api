@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "project_contracts",
+  "info": {
+    "name": "Project contract",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "contract": {
+      "model": "contract",
+      "via": "project_contracts"
+    },
+    "user": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "project_contracts"
+    }
+  }
+}

@@ -62,6 +62,10 @@
     "contracts": {
       "via": "user",
       "collection": "contract"
+    },
+    "project_contracts": {
+      "via": "user",
+      "collection": "project-contract"
     }
   }
 }

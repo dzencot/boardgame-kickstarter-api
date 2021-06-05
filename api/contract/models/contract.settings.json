@@ -35,6 +35,10 @@
     },
     "count": {
       "type": "integer"
+    },
+    "project_contracts": {
+      "via": "contract",
+      "collection": "project-contract"
     }
   }
 }
