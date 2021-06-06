@@ -1,6 +1,14 @@
 {
   "routes": [
     {
+      "method": "POST",
+      "path": "/kickstarters/search",
+      "handler": "kickstarter.search",
+      "config": {
+        "policies": []
+      }
+    },
+    {
       "method": "GET",
       "path": "/kickstarters",
       "handler": "kickstarter.find",

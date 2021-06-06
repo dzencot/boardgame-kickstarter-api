@@ -103,15 +103,16 @@ const uploadKickstarters = (kickstarters) => {
 
 module.exports = {
   create: async (ctx) => {
-    const kickApi = 'https://www.kickstarter.com/discover/advanced';
+    // const kickApi = 'https://www.kickstarter.com/discover/advanced';
     // ?term=%CE%A7%CF%81%CF%8C%CE%BD%CE%BF%CF%82+Project&sort=magic&format=json
-    const kickstarterName = ctx.request.body.title;
-    const kickUrl = new URL(kickApi);
-    kickUrl.searchParams.set('term', kickstarterName);
-    kickUrl.searchParams.set('format', 'json');
-    console.log(`url: ${kickUrl.toString()}`);
-    const { data } = await axios.get(kickUrl.toString());
-    const parsedData = parseKickstartersJson(data);
+    // const kickstarterName = ctx.request.body.title;
+    // const kickUrl = new URL(kickApi);
+    // kickUrl.searchParams.set('term', kickstarterName);
+    // kickUrl.searchParams.set('format', 'json');
+    // console.log(`url: ${kickUrl.toString()}`);
+    // const { data } = await axios.get(kickUrl.toString());
+    // const parsedData = parseKickstartersJson(data);
+    const parsedData = ctx.request.body;
     const uploadedData = await Promise.all(parsedData.map(({ kickstarter }) =>
       strapi.services.kickstarter.create(kickstarter)));
     // const addedData = await uploadKickstarters(parsedData, ctx);
@@ -134,5 +135,19 @@ module.exports = {
       return { ...pledge, contracts: updatedContracts };
     });
     return { ...kickstarter, pledges: updatedPledges };
+  },
+
+  search: async (ctx) => {
+    const kickApi = 'https://www.kickstarter.com/discover/advanced';
+    const kickstarterName = ctx.request.body.title;
+    const kickUrl = new URL(kickApi);
+    kickUrl.searchParams.set('term', kickstarterName);
+    kickUrl.searchParams.set('format', 'json');
+    console.log(`url: ${kickUrl.toString()}`);
+    const { data } = await axios.get(kickUrl.toString());
+    const parsedData = parseKickstartersJson(data);
+    // const uploadedData = await Promise.all(parsedData.map(({ kickstarter }) =>
+    //   strapi.services.kickstarter.create(kickstarter)));
+    return parsedData;
   }
 };
